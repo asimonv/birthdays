@@ -1,0 +1,16 @@
+PODS:
+  - BouncyLayout (2.3.0)
+
+DEPENDENCIES:
+  - BouncyLayout
+
+SPEC REPOS:
+  trunk:
+    - BouncyLayout
+
+SPEC CHECKSUMS:
+  BouncyLayout: 946047ef4987959bc107731c665ca4fdcdef5e17
+
+PODFILE CHECKSUM: 809f09bc9156afcbef2514e03f9da223a3862983
+
+COCOAPODS: 1.8.4
