@@ -115,16 +115,15 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         completionHandler()
     }
     
-    func scheduleNotification(notificationType: String) {
+    func scheduleNotification(birthday: Birthday) {
         
         let content = UNMutableNotificationContent()
-        let categoryIdentifire = "Delete Notification Type"
+        let categoryIdentifier = "Delete Notification Type"
         
-        content.title = notificationType
-        content.body = "This is example how to create " + notificationType
-        content.sound = UNNotificationSound.default
+        content.body = "It's \(birthday.person)'s birthday 🎂"
+        content.sound = .default
         content.badge = 1
-        content.categoryIdentifier = categoryIdentifire
+        content.categoryIdentifier = categoryIdentifier
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let identifier = "Local Notification"
@@ -138,7 +137,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         let snoozeAction = UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
         let deleteAction = UNNotificationAction(identifier: "DeleteAction", title: "Delete", options: [.destructive])
-        let category = UNNotificationCategory(identifier: categoryIdentifire,
+        let category = UNNotificationCategory(identifier: categoryIdentifier,
                                               actions: [snoozeAction, deleteAction],
                                               intentIdentifiers: [],
                                               options: [])

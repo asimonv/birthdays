@@ -126,9 +126,11 @@ extension HomeViewController : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let birthday = birthdays[indexPath.row]
+        let splitName = birthday.person.split(separator: " ")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! BirthdayCell
         
         cell.profileName.text = birthday.person
+        cell.profileBadgeLabel.text = "\(splitName[0].prefix(1))\(splitName[1].prefix(1))"
         return cell
     }
     
@@ -158,7 +160,7 @@ extension HomeViewController: BirthdayDelegate {
         birthdays.append(birthday)
         collectionView.reloadData()
         
-        self.appDelegate?.scheduleNotification(notificationType: "Local Notification")
+        self.appDelegate?.scheduleNotification(birthday: birthday)
         
     }
 }

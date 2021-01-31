@@ -15,4 +15,6 @@
 ## Enums
 * https://www.swiftbysundell.com/tips/enums-with-custom-raw-types/
 * https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types
-* 
+
+## Strings
+* https://www.agnosticdev.com/content/how-get-first-or-last-characters-string-swift-4
